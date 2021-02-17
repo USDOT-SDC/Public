@@ -46,6 +46,12 @@ Fill in the following, as appropriate and known
 
 * List of metadata, if any
 
+### 1.7 Data Remarks:
+
+* PI's assessment of the data (i.e. disclaimers, instrument problems, quality issues, etc.)
+* Missing data periods
+* Software compatibility (i.e. list of existing software to view/manipulate the data)
+
 
 ## 2.0 File Level Documentation
 
@@ -101,12 +107,6 @@ DATE/TIME               LAT     LONG     ID        TYPE    TRESPASSER  FATALITY
 2021-01-28T07:52-06:00  33.087  102.116  AI.20.3  Public   True        1
 2021-01-30T18:16-06:00  33.090  102.120  AI.20.4  Private  False       0
 ```
-
-## 2.3 Data Remarks:
-
-* PI's assessment of the data (i.e. disclaimers, instrument problems, quality issues, etc.)
-* Missing data periods
-* Software compatibility (i.e. list of existing software to view/manipulate the data)
 
 ## 3.0 References:
 
