@@ -57,8 +57,8 @@ Fill in the following, as appropriate and known
 
 ## 6.0 File Level Metadata
 
-* If posible, file level metadata should be included at the begining of ASCII text files
-* If included, metadata will be inclosed in tags (\<metadata>\</metadata>)
+* If possible, file level metadata should be included at the beginning of ASCII text files
+* If included, metadata will be enclosed in tags (\<metadata>\</metadata>)
 * The contents of metadata will be in yaml format
 
 ### 6.1 Metadata Elements
