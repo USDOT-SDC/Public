@@ -1,5 +1,5 @@
 # \<Project Name> Data Documentation
-* Project Acronym: <PROJ-ACRNM>
+* Project Acronym: \<PROJ-ACRNM>
 
 ## 1.0 Points of Contact (POCs)
 Fill in the following, as appropriate and known
