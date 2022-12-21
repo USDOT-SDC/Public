@@ -1,0 +1,4 @@
+# Copy and rename to config.yaml
+data_provider_slug: acme-data-provider
+api_resource: generate_token
+api_key: "xxxxXXXXxxxxXXXXxxxxXXXXxxxxXXXXxxxxXXXX"
