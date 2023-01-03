@@ -6,12 +6,11 @@ import configparser
 import json
 import yaml
 
-config_file = "config.yaml"
 
 def token_refresh():
     aws_path = "/.aws"
     # get the token refresh config
-    token_config = yaml.safe_load(Path(config_file).read_text())
+    token_config = yaml.safe_load(Path("config.yaml").read_text())
     api_endpoint = "https://portal.sdc.dot.gov/{0}_users/{1}".format(
         token_config["data_provider_slug"], token_config["api_resource"]
     )
