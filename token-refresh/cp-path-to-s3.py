@@ -6,6 +6,7 @@ import os
 import os.path
 import yaml
 
+config_file = "config.yaml"
 
 def get_src_files(src_path):
     src_path = Path(src_path)
@@ -18,7 +19,7 @@ def get_src_files(src_path):
 
 def cp_to_s3(filename, key):
     # get the date provider slug
-    data_provider_slug = yaml.safe_load(Path("config.yaml").read_text())["data_provider_slug"]
+    data_provider_slug = yaml.safe_load(Path(config_file).read_text())["data_provider_slug"]
     # set the default profile
     boto3.setup_default_session(profile_name=data_provider_slug)
     # Set the desired multipart threshold value (1GB)
