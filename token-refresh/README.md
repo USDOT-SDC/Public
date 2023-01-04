@@ -16,7 +16,8 @@ If you haven't already, download and install the following:
 
 
 ## Clone The Repo
-1. Open a Command Prompt and navigate to the parent directory of where you would like to put this repo. For example `C:\Users\user-name\some-dir`
+1. Open a Command Prompt and navigate to the parent directory of where you would like to put this repo.
+   For example `C:\Users\user-name\some-dir`
 2. Type `git clone git@github.com:USDOT-SDC/Public.git` and press Enter
    1. __Note:__ If you do not have Git installed, you can download the [zip file](https://github.com/USDOT-SDC/Public/archive/refs/heads/main.zip) of the repo and unzip it into `Public`
 3. You should see something like this
