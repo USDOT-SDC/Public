@@ -8,10 +8,11 @@ import yaml
 
 
 def get_src_files(src_path):
+    src_path = Path(src_path)
     src_files = []
-    for dirpath, dirnames, filenames in os.walk(Path(src_path)):
+    for dirpath, dirnames, filenames in os.walk(src_path):
         for filename in filenames:
-            src_files.append({"dirpath": dirpath.removeprefix(src_path), "filename": filename})
+            src_files.append({"dirpath": dirpath, "filename": filename})
     return src_files
 
 
