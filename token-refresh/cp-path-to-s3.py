@@ -37,7 +37,9 @@ src_path = "test-files"
 dst_prefix = "test-prefix"
 for src_file in get_src_files(src_path):
     src = os.path.join(src_file["dirpath"], src_file["filename"])
-    dst = dst_prefix + "/" + src_file["dirpath"].replace("\\", "/") + "/" + src_file["filename"]
+    src_prefix = src_file["dirpath"].removeprefix(src_path).replace("\\", "/")
+    print(src_prefix)
+    dst = dst_prefix + src_prefix + "/" + src_file["filename"]
     token_refresh()
     print("Uploading:" + src + " to:" + dst + "...")
     cp_to_s3(src, dst)
