@@ -7,10 +7,10 @@ import json
 import yaml
 
 
-config_file = "sandbox-config.yaml"
+config_file = "config.yaml"
 
 
-def token_refresh():
+def token_refresh(config_file=config_file):
     aws_path = "/.aws"
     # get the token refresh config
     token_config = yaml.safe_load(Path(config_file).read_text())
