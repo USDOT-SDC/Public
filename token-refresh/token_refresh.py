@@ -7,10 +7,13 @@ import json
 import yaml
 
 
+config_file = "sandbox-config.yaml"
+
+
 def token_refresh():
     aws_path = "/.aws"
     # get the token refresh config
-    token_config = yaml.safe_load(Path("config.yaml").read_text())
+    token_config = yaml.safe_load(Path(config_file).read_text())
     api_endpoint = "https://portal.sdc.dot.gov/{0}_users/{1}".format(
         token_config["data_provider_slug"], token_config["api_resource"]
     )
@@ -63,6 +66,6 @@ def token_refresh():
     with open(config_file, "w+") as configfile:
         cred_parser.write(configfile)
 
-    print("\n\n----------------------------------------------------------------")
+    print("--------------------------------------------------------------------")
     print("Note: your AWS credentials will expire at {0}.".format(credentials["Expiration"]))
-    print("----------------------------------------------------------------\n\n")
+    print("--------------------------------------------------------------------\n")
