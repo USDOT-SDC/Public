@@ -71,26 +71,28 @@ If you haven't already, download and install the following:
 1.  Type `cp config.sample.yaml config.yaml` and press Enter
 2.  Update the `config.yaml` file with the information provided by the SDC Enablement team.
 ## Upload Files To The Data Lake Drop Zone
-1.  At this point you have to option to test the script as is using the test files, or you may edit some of the variables in `cp-path-to-s3.py` file to start uploading data
-    1.  `src_path` is the local path to the files you want to upload. The `get_src_files()` function is recursive and will get a list of all files, including sub-directories, in the path
-    2.  `dst_prefix` is a prefix that is added to the path of files during upload  
+1.  At this point you have to option to test the script as is using the test files, or you may edit some of the variables in `cp-path-to-s3.py` file before you start uploading data
+    1.  `src_path` is the local path to the directory containing files you want to upload. The `get_src_files()` function is recursive and will get a list of all files, including sub-directories, in the path
+    2.  `dst_prefix` is a prefix that is added to the begining of the prefix of files during upload  
     For example:
-    `dst_prefix = "project04"` or `dst_prefix = "sub-group_42"`
+    `dst_prefix = "project04/"` or `dst_prefix = "sub-group_42/"`
 2.  Type `python cp-path-to-s3.py` and press Enter
 3.  You should see something like this
     ```
-    ----------------------------------------------------------------
-    Note: your AWS credentials will expire at 2023-01-04 23:55:15+00:00.
-    ----------------------------------------------------------------
+    --------------------------------------------------------------------
+    Note: your AWS credentials will expire at 2023-02-08 19:55:24+00:00.
+    --------------------------------------------------------------------
 
-    Uploading:test-files\01-10mb.test to:test-prefix/test-files/01-10mb.test...
-    Uploading:test-files\01-10mb.test to:test-prefix/test-files/01-10mb.test...Done
+    Uploading: test-files\01-1mb.test
+          To: test-prefix/01-1mb.test
+        Done: 01-1mb.test
 
-    ----------------------------------------------------------------
-    Note: your AWS credentials will expire at 2023-01-04 23:58:41+00:00.
-    ----------------------------------------------------------------
+    --------------------------------------------------------------------
+    Note: your AWS credentials will expire at 2023-02-08 19:55:31+00:00.
+    --------------------------------------------------------------------
 
-    Uploading:test-files\sub-files\08-10mb.test to:test-prefix/test-files/sub-files/08-10mb.test...
-    Uploading:test-files\sub-files\08-10mb.test to:test-prefix/test-files/sub-files/08-10mb.test...Done
+    Uploading: test-files\sub-files\06-1mb.test
+           To: test-prefix/sub-files/06-1mb.test
+         Done: 06-1mb.test
     ```
     _This will repeat for all files in the `src_path`_
