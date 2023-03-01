@@ -76,7 +76,7 @@ def cp_to_s3(filename, key, config_file):
             # read file in chunks
             for chunk in read_in_chunks(f):
                 # upload this chunk
-                print(f"                Uploading Part: {str(part_number)}...")
+                print(f"           Uploading Part: {str(part_number)}...")
                 mpu_part = s3.upload_part(
                     Body=chunk,
                     Bucket=mpu_crt["Bucket"],
@@ -92,7 +92,7 @@ def cp_to_s3(filename, key, config_file):
                         "PartNumber": part_number,
                     }
                 )
-                print(f"                Uploading Part: {str(part_number)}...complete")
+                print(f"           Uploading Part: {str(part_number)}...complete")
                 # increment to next chunk
                 part_number += 1
         # complete this mpu
