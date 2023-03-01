@@ -71,28 +71,36 @@ If you haven't already, download and install the following:
 1.  Type `cp config.sample.yaml config.yaml` and press Enter
 2.  Update the `config.yaml` file with the information provided by the SDC Enablement team.
 ## Upload Files To The Data Lake Drop Zone
-1.  At this point you have to option to test the script as is using the test files, or you may edit some of the variables in `cp-path-to-s3.py` file before you start uploading data
-    1.  `src_path` is the local path to the directory containing files you want to upload. The `get_src_files()` function is recursive and will get a list of all files, including sub-directories, in the path
+1.  At this point you have to option to test the script as is using the test files, or you may edit some of the variables in `main.py` file before you start uploading data
+    1.  `src_path` is the local path (relative or absolute) to the directory containing files you want to upload. The `func.get_src_files()` function is recursive and will get a list of all files, including sub-directories, in your local path  
+    For example: `src_path = "C:\project_314\dataset_42\"`
     2.  `dst_prefix` is a prefix that is added to the begining of the prefix of files during upload  
-    For example:
-    `dst_prefix = "project04/"` or `dst_prefix = "sub-group_42/"`
-2.  Type `python cp-path-to-s3.py` and press Enter
+    For example: `dst_prefix = "pipeline/project_314/dataset_42/"`
+2.  Type `python main.py` and press Enter
 3.  You should see something like this
     ```
     --------------------------------------------------------------------
-    Note: your AWS credentials will expire at 2023-02-08 19:55:24+00:00.
+    Note: your AWS credentials will expire at 2023-03-01 05:07:30+00:00.
     --------------------------------------------------------------------
 
     Uploading: test-files\01-1mb.test
           To: test-prefix/01-1mb.test
+                    Uploading Part: 1...
+                    Uploading Part: 1...complete
         Done: 01-1mb.test
 
     --------------------------------------------------------------------
-    Note: your AWS credentials will expire at 2023-02-08 19:55:31+00:00.
+    Note: your AWS credentials will expire at 2023-03-01 05:08:05+00:00.
     --------------------------------------------------------------------
 
-    Uploading: test-files\sub-files\06-1mb.test
-           To: test-prefix/sub-files/06-1mb.test
-         Done: 06-1mb.test
+    Uploading: test-files\sub-directory\06-1mb.test
+          To: test-prefix/sub-directory/06-1mb.test
+                    Uploading Part: 1...
+                    Uploading Part: 1...complete
+        Done: 06-1mb.test
     ```
     _This will repeat for all files in the `src_path`_
+1. Notes:  
+   The default part size is 15MiB  
+   Each part has its own MD5 checksum calculated and checked  
+   If any MD5 checksum fails, the upload fails
