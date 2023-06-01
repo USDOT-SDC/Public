@@ -16,7 +16,12 @@ def token_refresh(config_file):
     )
     # Requests credentials from token generator api
     response = requests.post(
-        api_endpoint, data=json.dumps({}), headers={"Accept": "application/json", "x-api-key": token_config["api_key"]}
+        api_endpoint,
+        data=json.dumps({}),
+        headers={
+            "Accept": "application/json",
+            "x-api-key": token_config["api_key"],
+        },
     )
     credentials = response.json()
 
