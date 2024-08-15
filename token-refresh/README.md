@@ -5,9 +5,9 @@ _This guide is written for primarily for Windows, but you should find it helpful
 
 ## Prerequisites
 If you haven't already, download and install the following:
-- [Python 3](https://www.python.org/downloads/release/python-3913/)  
-  _Any 3.x version should work. We use 3.9.13; the latest runtime available for AWS Lambda._
-  - :arrow_forward: [How to Install Python 3.9 on Windows 10](https://www.youtube.com/watch?v=kIBPxiuBm1M)
+- [Python 3](https://www.python.org/downloads/release/python-3125/)  
+  _Any 3.x version should work. We use 3.12; the latest runtime available for AWS Lambda._
+  - :arrow_forward: [How to Install Python 3.12 on Windows 10](https://www.youtube.com/watch?v=kIBPxiuBm1M)
 - [AWS Command Line Interface](https://aws.amazon.com/cli/)
   - :arrow_forward: [How to Install AWS CLI on Windows](https://www.youtube.com/watch?v=Gy-jlF3uMLc)
 - [Git](https://git-scm.com/download/win)  
@@ -79,9 +79,20 @@ If you haven't already, download and install the following:
 2.  Type `python main.py` and press Enter
 3.  You should see something like this
     ```
-    --------------------------------------------------------------------
-    Note: your AWS credentials will expire at 2023-03-01 05:07:30+00:00.
-    --------------------------------------------------------------------
+    ╔══════════════════════════════════════════════════════════════════════════════════╗
+    ║                                                                                  ║
+    ║ sdc profile:                                                                     ║
+    ║ Requesting new access keys and session token from...                             ║
+    ║ https://api.sdc.dot.gov/v1/token                                                 ║
+    ║ ?username=YourUsernameHere&user_key=YourUserKeyHere                              ║
+    ║                                                                                  ║
+    ║                                                                                  ║
+    ║ AccessKeyId: asdfNewAccessKeyIdasdf                                              ║
+    ║                                                                                  ║
+    ║                                                                                  ║
+    ║ Note: your AWS credentials will expire at 2024-08-15 17:48:56+00:00              ║
+    ║                                                                                  ║
+    ╚══════════════════════════════════════════════════════════════════════════════════╝
 
     Uploading: test-files\01-1mb.test
           To: test-prefix/01-1mb.test
@@ -89,9 +100,20 @@ If you haven't already, download and install the following:
                     Uploading Part: 1...complete
         Done: 01-1mb.test
 
-    --------------------------------------------------------------------
-    Note: your AWS credentials will expire at 2023-03-01 05:08:05+00:00.
-    --------------------------------------------------------------------
+    ╔══════════════════════════════════════════════════════════════════════════════════╗
+    ║                                                                                  ║
+    ║ sdc profile:                                                                     ║
+    ║ Requesting new access keys and session token from...                             ║
+    ║ https://api.sdc.dot.gov/v1/token                                                 ║
+    ║ ?username=YourUsernameHere&user_key=YourUserKeyHere                              ║
+    ║                                                                                  ║
+    ║                                                                                  ║
+    ║ AccessKeyId: asdfNewAccessKeyIdasdf                                              ║
+    ║                                                                                  ║
+    ║                                                                                  ║
+    ║ Note: your AWS credentials will expire at 2024-08-15 17:48:56+00:00              ║
+    ║                                                                                  ║
+    ╚══════════════════════════════════════════════════════════════════════════════════╝
 
     Uploading: test-files\sub-directory\06-1mb.test
           To: test-prefix/sub-directory/06-1mb.test
